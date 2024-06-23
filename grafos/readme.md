@@ -1,3 +1,3 @@
 ## Grafo 6
 
-![alt text](image.png)
+![alt text](grafo6.png)
