@@ -3,5 +3,10 @@
     "ostream": "cpp",
     "iostream": "cpp",
     "vector": "cpp"
+  },
+  "editor.tokenColorCustomizations": {
+    "[name of the theme]": {
+      "semanticHighlighting": true
+    }
   }
 }
