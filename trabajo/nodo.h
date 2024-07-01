@@ -41,19 +41,35 @@ class NodoAlpha{
 
 class Ejercicios{
     public:
-        void mostrar(Nodo*ini){
+        void mostrar(Nodo*ini, string label = "Nodos: "){
+            cout << label<<endl;
             for(Nodo*tmp = ini; tmp != NULL; tmp = tmp->next){
                 cout<<tmp->dato<<", ";
             }
+            cout<<"\n";
             cout<<endl;
         };
 
-        void mostrarAlpha(NodoAlpha*ini){
-            for(NodoAlpha*tmp = ini; tmp != NULL; tmp = tmp->next){
-                cout<<tmp->dato<<", ";
+        // void mostrarAlpha(NodoAlpha*ini, string label = "Nodos: "){
+        //     cout << label<<endl;
+        //     for(NodoAlpha*tmp = ini; tmp != NULL; tmp = tmp->next){
+        //         cout<<tmp->dato<<", ";
+        //     }
+        //     cout<<"\n";
+        //     cout<<endl;
+        // };
+
+        void mostrarAlpha(NodoAlpha* nodo) {
+            cout << "Nodos: ";
+            while (nodo != nullptr) {
+                cout << nodo->dato;
+                if (nodo->next != nullptr) {
+                    cout << ", ";
+                }
+                nodo = nodo->next;
             }
-            cout<<endl;
-        };
+            cout << endl;
+        }
 
     NodoAlpha* mergeLists(NodoAlpha* p, NodoAlpha* q) {
         if (!p) return q;
@@ -130,6 +146,7 @@ class Ejercicios{
         };
 
         void ejercicio1(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*r=new Nodo(3);
             p->next = new Nodo(2);
@@ -138,6 +155,7 @@ class Ejercicios{
             r->Mostrar("r: ");
             mostrar(p);
             
+            cout<<"Nodo: Forma Final"<<endl;
             p=p->next;
             p-> Mostrar("p: ");
             r->Mostrar("r: ");
@@ -145,6 +163,7 @@ class Ejercicios{
         };
 
         void ejercicio2(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*q=new Nodo(2);
             Nodo*r=new Nodo(3);
@@ -155,6 +174,7 @@ class Ejercicios{
             r-> Mostrar("r: ");
             mostrar(p);
 
+            cout<<"Nodo: Forma Final"<<endl;
             p=p->next;
             p-> Mostrar("p: ");
             q-> Mostrar("q: ");
@@ -163,6 +183,7 @@ class Ejercicios{
         }
 
         void ejercicio3(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*q=new Nodo(2);
             Nodo*r=new Nodo(3);
@@ -173,6 +194,7 @@ class Ejercicios{
             r-> Mostrar("r: ");
             mostrar(p);
 
+            cout<<"Nodo: Forma Final"<<endl;
             q=p;
             p-> Mostrar("p: ");
             q-> Mostrar("q: ");
@@ -181,6 +203,7 @@ class Ejercicios{
         };
 
         void ejercicio4(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*r=new Nodo(3);
             p->next = new Nodo(2);
@@ -189,6 +212,7 @@ class Ejercicios{
             r-> Mostrar("r: ");
             mostrar(p);
 
+            cout<<"Nodo: Forma Final"<<endl;
             r=p->next;
             p-> Mostrar("p: ");
             r-> Mostrar("r: ");
@@ -196,6 +220,7 @@ class Ejercicios{
         };
 
         void ejercicio5(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*r=new Nodo(3);
             p->next = new Nodo(2);
@@ -204,6 +229,7 @@ class Ejercicios{
             r-> Mostrar("r: ");
             mostrar(p);
 
+            cout<<"Nodo: Forma Final"<<endl;
             p->dato = r->dato;
             p-> Mostrar("p: ");
             r-> Mostrar("r: ");
@@ -211,6 +237,7 @@ class Ejercicios{
         };
 
         void ejercicio6(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*r=new Nodo(3);
             p->next = new Nodo(2);
@@ -219,6 +246,7 @@ class Ejercicios{
             r-> Mostrar("r: ");
             mostrar(p);
 
+            cout<<"Nodo: Forma Final"<<endl;
             p->dato = p->next->next->dato;
             p-> Mostrar("p: ");
             r-> Mostrar("r: ");
@@ -226,6 +254,7 @@ class Ejercicios{
         };
 
         void ejercicio7(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*r=new Nodo(3);
             p->next = new Nodo(2);
@@ -234,6 +263,7 @@ class Ejercicios{
             r-> Mostrar("r: ");
             mostrar(p);
 
+            cout<<"Nodo: Forma Final"<<endl;
             p->next->next->next = p;
             p-> Mostrar("p: ");
             r-> Mostrar("r: ");
@@ -241,6 +271,7 @@ class Ejercicios{
         };
 
         void ejercicio8(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p=new Nodo(1);
             Nodo*q=new Nodo(2);
             p->next = q;
@@ -250,6 +281,7 @@ class Ejercicios{
             mostrar(p);
 
 
+            cout<<"Nodo: Forma Final"<<endl;
             p->next->next->next=p;
             p-> Mostrar("p: ");
             q-> Mostrar("q: ");
@@ -259,18 +291,22 @@ class Ejercicios{
         };
 
         void ejercicio9(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             Nodo*p = new Nodo(1);
             p->next = new Nodo(2);
             p->next->next = new Nodo(3);
             p-> Mostrar("p: ");
             mostrar(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             p->next->next->next = p;
             p-> Mostrar("p: ");
             mostrar2(p);
         };
 
         void ejercicio10(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('A');
             NodoAlpha*q = new NodoAlpha('C');
             p->next = new NodoAlpha('B');
@@ -279,6 +315,8 @@ class Ejercicios{
             q-> Mostrar("q: ");
             mostrarAlpha(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             p->next = q;
             p->Mostrar("p: ");
             q->Mostrar("q: ");
@@ -286,18 +324,22 @@ class Ejercicios{
         };
 
         void ejercicio11(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('A');
             p->next = new NodoAlpha('B');
             p->next->next = new NodoAlpha('C');
             p-> Mostrar("p: ");
             mostrarAlpha(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             p->next = p->next->next;
             p-> Mostrar("p: ");
             mostrarAlpha(p);
         };
 
         void ejercicio12(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('_');
             NodoAlpha*q = p;
             p->next = new NodoAlpha('_');
@@ -307,6 +349,8 @@ class Ejercicios{
             q-> Mostrar("q: ");
             mostrarAlpha(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             q=p->next->next->next;
             p-> Mostrar("p: ");
             q-> Mostrar("q: ");
@@ -314,6 +358,7 @@ class Ejercicios{
         };
 
         void ejercicio13(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('a');
             NodoAlpha*q = p;
             p->next = new NodoAlpha('b');
@@ -323,6 +368,8 @@ class Ejercicios{
             q-> Mostrar("q: ");
             mostrarAlpha(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             q=p->next->next;
             p-> Mostrar("p: ");
             q-> Mostrar("q: ");
@@ -330,10 +377,13 @@ class Ejercicios{
         };
 
         void ejercicio14(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha();
             p-> Mostrar("p: ");
             mostrarAlpha(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             p = new NodoAlpha('A');
             p->next = new NodoAlpha('B');
             p->next->next = new NodoAlpha('C');
@@ -343,6 +393,7 @@ class Ejercicios{
         };
 
         void ejercicio15(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('B');
             NodoAlpha*q = new NodoAlpha();
             p->next = new NodoAlpha('C');
@@ -350,6 +401,8 @@ class Ejercicios{
             q-> Mostrar("q: ");
             mostrarAlpha(p);
 
+
+            cout<<"Nodo: Forma Final"<<endl;
             p = new NodoAlpha('A');
             p->next = new NodoAlpha('B');
             p->next->next = new NodoAlpha('C');
@@ -359,6 +412,7 @@ class Ejercicios{
         };
 
         void ejercicio16(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('A');
             p->next = new NodoAlpha('B');
             p->next->next = new NodoAlpha('C');
@@ -366,12 +420,14 @@ class Ejercicios{
             mostrarAlpha(p);
 
 
+            cout<<"Nodo: Forma Final"<<endl;
             p->next->next->next = new NodoAlpha('D');
             p-> Mostrar("p: ");
             mostrarAlpha(p);
         };
 
         void ejercicio17(){
+            cout<<"Nodo: Forma Inicial"<<endl;
             NodoAlpha*p = new NodoAlpha('A');
             p->next = new NodoAlpha('B');
             p->next->next = new NodoAlpha('C');
@@ -389,6 +445,7 @@ class Ejercicios{
                 temp = temp->next;
             }
 
+            cout<<"Nodo: Forma Final"<<endl;
             // Insertar el nodo 'A' al final de la lista
             temp->next = q;
             q->next = nullptr;
@@ -399,6 +456,7 @@ class Ejercicios{
         };
 
     void ejercicio18() {
+        cout << "Nodo: Forma Inicial" << endl;
         NodoAlpha* p = new NodoAlpha('A');
         p->next = new NodoAlpha('B');
         p->next->next = new NodoAlpha('C');
@@ -420,12 +478,14 @@ class Ejercicios{
         last->next = temp;
         temp->next = NULL;
 
+        cout << "Nodo: Forma Final" << endl;
         // Mostrar la lista modificada
         p->Mostrar("p: ");
         mostrarAlpha(p);
     }
 
     void ejercicio19() {
+        cout << "Nodo: Forma Inicial" << endl;
         NodoAlpha* p = new NodoAlpha('E');
         p->next = new NodoAlpha('H');
         p->next->next = new NodoAlpha('M');
@@ -442,23 +502,28 @@ class Ejercicios{
 
         // Hacer que p apunte al nodo B (nuevo cabeza de la lista)
         p = merged;
-        
+
+        cout << "Nodo: Forma Final" << endl;
+        q = new NodoAlpha();
         // Mostrar p apuntando a nodo B
         p->Mostrar("p: ");
+        q->Mostrar("q: ");
         mostrarAlpha(p);
     }
 
     void ejercicio20() {
+        cout << "Nodo: Forma Inicial" << endl;
         NodoAlpha* p = new NodoAlpha('A');
         p->next = new NodoAlpha('B');
         p->next->next = new NodoAlpha('C');
         p->next->next->next = new NodoAlpha('D');
 
+        NodoAlpha* q = new NodoAlpha();
+        NodoAlpha* r = new NodoAlpha();
         p->Mostrar("p :");
+        q->Mostrar("q :");
+        r->Mostrar("r :");
         mostrarAlpha(p);
-
-        NodoAlpha* q = nullptr;
-        NodoAlpha* r = nullptr;
 
         // Invertir la lista
         while (p != NULL) {
@@ -471,8 +536,13 @@ class Ejercicios{
         // p ahora debería apuntar al nuevo primer nodo (D)
         p = q;
 
+        cout << "Nodo: Forma Final" << endl;
+        q = new NodoAlpha();
+        r = new NodoAlpha(); 
         // Mostrar la lista invertida
         p->Mostrar("p: ");
+        q->Mostrar("q: ");
+        r->Mostrar("r: ");
         mostrarAlpha(p);
     };
 };
