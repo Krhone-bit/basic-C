@@ -50,15 +50,6 @@ class Ejercicios{
             cout<<endl;
         };
 
-        // void mostrarAlpha(NodoAlpha*ini, string label = "Nodos: "){
-        //     cout << label<<endl;
-        //     for(NodoAlpha*tmp = ini; tmp != NULL; tmp = tmp->next){
-        //         cout<<tmp->dato<<", ";
-        //     }
-        //     cout<<"\n";
-        //     cout<<endl;
-        // };
-
         void mostrarAlpha(NodoAlpha* nodo) {
             cout << "Nodos: ";
             while (nodo != nullptr) {
@@ -68,6 +59,7 @@ class Ejercicios{
                 }
                 nodo = nodo->next;
             }
+            cout<<"\n";
             cout << endl;
         }
 
